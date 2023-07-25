@@ -1,11 +1,11 @@
 Package: ezHawkSQL
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Make SQL Querying With Integrated Security EZ
+Version: 1.0.0
+Author: person("Paul", "Meinz", "meinzp@crc.losrios.edu", role = c("aut", "cre"))
+Maintainer: The package maintainer <meinzp@crc.losrios.edu>
+Description: This package is intended to streamline SQL querying from R in an 
+    integrated security environment (like Cosumnes River College).
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
