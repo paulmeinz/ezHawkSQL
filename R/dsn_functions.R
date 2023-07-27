@@ -6,7 +6,8 @@
 #' @export
 #'
 #' @examples
-set_dsn <- function(dsn = NULL, default = null) {
+set_dsn <- function(dsn = NULL, default = 1) {
+  validate_dsn(dsn)
 
   if (is.null(dsn)) {
     stop(strwrap("You're gonna need to provide a DSN name. If you want to
@@ -19,10 +20,10 @@ set_dsn <- function(dsn = NULL, default = null) {
   if (is.null(default)
       | length(default) > 1
       | !default %in% names(options()$ez.dsn)) {
-    options(ez.dsn.default = dsn[1])
-    warning('Setting first DSN as Default')
+    options(ez.dsn.default = dsn[default])
+    warning('Setting first listed DSN as Default')
   } else {
-    options(ez.dsn.default = dsn[alias])
+    options(ez.dsn.default = dsn[default])
   }
 
 }
@@ -79,6 +80,43 @@ set_default_dsn <- function(alias = NULL) {
   options(ez.dsn.default = options()$ez.dsn[alias])
 }
 
-alter_dsn <- function(from_alias = NULL, to = NULL) {
+#' Alter your current DSN List
+#'
+#' @param new_value
+#' @param from_alias
+#'
+#' @return
+#' @export
+#'
+#' @examples
+alter_dsn <- function(new_value, from_alias = NULL) {
+  validate_dsn(new_value)
+
+  if (!is.null(from_alias)) {
+    stopifnot('from_alias must be an alias from your current DSN list.' =
+                all(from_alias %in% names(options()$ez.dsn)))
+
+    stopifnot('new_value must be the same length as from_alias' =
+                length(new_value) == length(from_alias))
+  }
+
+  if (is.null(from_alias)) {
+    current_dsns <- options()$ez.dsn
+    current_dsns <- c(current_dsns, new_value)
+    options(ez.dsn = current_dsns)
+  }
+
+  if (!is.null(from_alias)) {
+    current_dsns <- options()$ez.dsn
+    current_dsns[from_alias] <- new_value
+    names(current_dsns)[names(current_dsns) == from_alias] <- names(new_value)
+    options(ez.dsn = current_dsns)
+  }
+
+  if(!options()$ez.dsn.default %in% options()$ez.dsn) {
+    options(ez.dsn.default = options()$ez.dsn[1])
+    warning(strwrap("You've overwritten your default. Setting to the first
+                    DSN in your list"))
+  }
 
 }
