@@ -3,10 +3,16 @@ Type: Package
 Title: Make SQL Querying With Integrated Security EZ
 Version: 1.0.0
 Author: person("Paul", "Meinz", "meinzp@crc.losrios.edu", role = c("aut", "cre"))
-Maintainer: The package maintainer <meinzp@crc.losrios.edu>
+Maintainer: <meinzp@crc.losrios.edu>
+URL: https://github.com/paulmeinz/ezHawkSQL
+BugReports: https://github.com/paulmeinz/ezHawkSQL/issues
 Description: This package is intended to streamline SQL querying from R in an 
     integrated security environment (like Cosumnes River College).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
+Imports:
+    knitr,
+    odbc,
+    crayon

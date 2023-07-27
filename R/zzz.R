@@ -6,13 +6,14 @@
     packageStartupMessage(crayon::red("Make sure to set your DSN using set_dsn()"))
   } else {
     dsn_values <- options()$ez.dsn
-    dsn_value_table <- knitr::kable(create_dsn_list(dsn_values))
     dsn_default <- options()$ez.dsn.default
     packageStartupMessage(crayon::green("\nYour current default DSN is:"))
-    packageStartupMessage(cat(crayon::white(names(dsn_default))))
-    packageStartupMessage(cat(crayon::green("\nHere's a list of your current DSNs:")),
+    packageStartupMessage(crayon::white(names(dsn_default)))
+    packageStartupMessage(crayon::green(strwrap("\nHere's a list of your current DSNs
+                                        aliases:")),
                           appendLF = FALSE)
-    packageStartupMessage(print(dsn_value_table))
+    packageStartupMessage(crayon::white(paste('\n',names(dsn_values), sep = '- ')
+                                        ))
 
   }
 }
