@@ -11,7 +11,7 @@ set_dsn <- function(dsn = NULL, default = 1) {
 
   if (is.null(dsn)) {
     stop(strwrap("You're gonna need to provide a DSN name. If you want to
-      reset/change, you DSN use reset_dsn() or
+      reset/change your DSN for the current session, use reset_dsn() or
       alter_dsn(), respectively"))
   }
 
@@ -26,6 +26,9 @@ set_dsn <- function(dsn = NULL, default = 1) {
     options(ez.dsn.default = dsn[default])
   }
 
+  warning(crayon::green(strwrap('NOTE any session DSN settings will not
+                                be saved to your next session. Edit
+                                .Renviron for that.')))
 }
 
 #' Get DSNs and Default DSN
@@ -56,7 +59,9 @@ reset_dsn <- function() {
   options(ez.dsn.default = NULL)
 
   cat(crayon::green(strwrap('DSN list and default DSN cleared.
-                            Use set_dsn() to set a new DSN.')))
+                            Use set_dsn() to set a new DSN. NOTE:
+                            These changes will not be saved for your
+                            next session.')))
 }
 
 #' Set Your Default DSN
@@ -78,6 +83,9 @@ set_default_dsn <- function(alias = NULL) {
   }
 
   options(ez.dsn.default = options()$ez.dsn[alias])
+  warning(crayon::green(strwrap('NOTE any changes to your DSN in this
+                                session will not be saved for future sessions.
+                                Modify .Renviron for permanent changes.')))
 }
 
 #' Alter your current DSN List
@@ -118,5 +126,9 @@ alter_dsn <- function(new_value, from_alias = NULL) {
     warning(strwrap("You've overwritten your default. Setting to the first
                     DSN in your list"))
   }
+
+  warning(crayon::green(strwrap('NOTE any changes to your DSN in this
+                                session will not be saved for future sessions.
+                                Modify .Renviron for permanent changes.')))
 
 }
