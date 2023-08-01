@@ -14,7 +14,9 @@ sql_query(
 \arguments{
 \item{query}{The query from which you would like to get data.}
 
-\item{...}{}
+\item{close}{Close and destroy the connection once the query is complete?}
+
+\item{...}{Additional arguments passed to odbc::dbGetQuery()}
 
 \item{dsn}{The alias of your dsn. Uses default dsn if not specified.}
 }
