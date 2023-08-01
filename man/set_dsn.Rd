@@ -7,8 +7,23 @@
 set_dsn(dsn = NULL, default = 1)
 }
 \arguments{
-\item{dsn}{}
+\item{dsn}{A named character vector. The names of this list should correspond
+to an 'Alias' you will reference in code later. The values should be datasource
+names from your integrated security environment.}
+
+\item{default}{Your default dsn (presumably the dsn you will use most frequently).
+If this is left unspecified, set_dsn presumes the first supplied value in dsn
+is your default.}
+}
+\value{
+Sets the ez.dsn user defined option and your default DSN which is
+  stored in ez.dsn.default
 }
 \description{
-Set DSN names for local servers
+This function temporarily sets your DSNs for use in sql queries.
+}
+\examples{
+dsns <- c('Alias1' = 'dsn1', 'Alias2' = 'dsn2')
+set_dsn(dsns, default = 'Alias2')
+
 }

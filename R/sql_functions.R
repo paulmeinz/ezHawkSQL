@@ -1,13 +1,15 @@
 #' Execute a single query
 #'
-#' @param dsn
-#' @param query
-#' @param ...
+#' @param dsn The alias of your dsn. Uses default dsn if not specified.
+#' @param query The query from which you would like to get data.
+#' @param close Close and destroy the connection once the query is complete?
+#' @param ... Additional arguments passed to odbc::dbGetQuery()
 #'
-#' @return
+#' @return Presuming your query is written properly. Returns a data frame of data
+#'   (e.g. isn't inserting data into a temp table)
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{sql_query("select foo from bar where beans = 'beans'")}
 sql_query <- function(query, dsn_alias = names(options()$ez.dsn.default),
                       close = TRUE,
                       ...) {

@@ -3,5 +3,7 @@
 export(alter_dsn)
 export(get_dsn)
 export(reset_dsn)
+export(save_dsn)
 export(set_default_dsn)
 export(set_dsn)
+export(sql_query)

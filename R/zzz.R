@@ -1,11 +1,12 @@
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage(crayon::green('Welcome to ezHawkSQL!'))
+  dsn_values <- eval(parse(text = Sys.getenv('ezHawkDSN')))
+  suppressWarnings(set_dsn(dsn = dsn_values))
   dsn_check <- is.null(options()$ez.dsn)
   if (dsn_check) {
     packageStartupMessage(crayon::red("\U2717 - Detecting no DSNs!"))
     packageStartupMessage(crayon::red("Make sure to set your DSN using set_dsn()"))
   } else {
-    dsn_values <- options()$ez.dsn
     dsn_default <- options()$ez.dsn.default
     packageStartupMessage(crayon::green("\nYour current default DSN is:"))
     packageStartupMessage(crayon::white(names(dsn_default)))

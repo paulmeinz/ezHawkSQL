@@ -2,10 +2,19 @@
 % Please edit documentation in R/dsn_functions.R
 \name{reset_dsn}
 \alias{reset_dsn}
-\title{Clear DSN list}
+\title{Clear DSN list
+Clears your current DSN List}
 \usage{
 reset_dsn()
 }
+\value{
+Clears the DSNs out of your current session.
+}
 \description{
 Clear DSN list
+Clears your current DSN List
+}
+\examples{
+reset_dsn() # Be careful with this!
+
 }

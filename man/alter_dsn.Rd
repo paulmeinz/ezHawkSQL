@@ -7,8 +7,23 @@
 alter_dsn(new_value, from_alias = NULL)
 }
 \arguments{
-\item{from_alias}{}
+\item{new_value}{The new value your want to add. This should be in the form
+of a named character vector. With the name so your vector representing
+DSN aliases and the values representing DSNs from your integrated security
+environment.}
+
+\item{from_alias}{If you hope to replace a current Alias/DSN, specify it here.
+Otherwise new_value will be appended to your current DSNs.}
+}
+\value{
+Adds/modifies your session DSNs, a.k.a options()$ez.dsn
 }
 \description{
 Alter your current DSN List
+}
+\examples{
+dsns <- c('Alias1' = 'dsn1', 'Alias2' = 'dsn2')
+set_dsn(dsns)
+new_dsn <- c('Alias3' = 'dsn3')
+alter_dsn(new_value = new_dsn, from_alias = 'Alias2')
 }
