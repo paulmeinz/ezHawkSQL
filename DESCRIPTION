@@ -17,4 +17,5 @@ Imports:
     odbc,
     crayon,
     dplyr,
-    devtools
+    devtools,
+    magrittr

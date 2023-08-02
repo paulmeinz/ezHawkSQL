@@ -163,7 +163,7 @@ alter_dsn <- function(new_value, from_alias = NULL) {
 #' @examples save_dsn()
 save_dsn <- function() {
   dsn_list <- create_dsn_list(options()$ez.dsn) %>%
-    mutate(string = paste("'", Alias, "' = '", DSN ,"'", sep = ''))
+    dplyr::mutate(string = paste("'", Alias, "' = '", DSN ,"'", sep = ''))
   cat(crayon::green('Paste this into your .Renviron after ezHawkDSN = \n'))
   print(paste(dsn_list$string, collapse = ','))
   usethis::edit_r_environ()
