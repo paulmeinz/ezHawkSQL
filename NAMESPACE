@@ -2,9 +2,11 @@
 
 export(alter_dsn)
 export(get_dsn)
+export(multistep_sql_query)
+export(read_query)
 export(reset_dsn)
 export(save_dsn)
 export(set_default_dsn)
 export(set_dsn)
 export(sql_query)
-importFrom(magrittr,"%>%")
+importFrom(magrittr,'%>%')

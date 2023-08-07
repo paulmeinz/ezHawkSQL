@@ -42,6 +42,7 @@ set_dsn <- function(dsn = NULL, default = 1) {
 }
 
 #' Get DSNs and Default DSN
+#'
 #' See a printed list of your DSNs and corresponding Aliases
 #'
 #' @return Returns a printed list of your current set DSNs within in this session.
@@ -59,7 +60,9 @@ get_dsn <- function() {
 }
 
 #' Clear DSN list
+#'
 #' Clears your current DSN List
+#'
 #' @return Clears the DSNs out of your current session.
 #' @export
 #'
@@ -76,7 +79,9 @@ reset_dsn <- function() {
 }
 
 #' Set Your Default DSN
+#'
 #' Helps you set the default DSN for this session.
+#'
 #' @param alias The alias for the DSN that you would like to set as default
 #'
 #' @return Sets your default DSN, a.k.a. the global option ez.dsn.default.
@@ -85,7 +90,7 @@ reset_dsn <- function() {
 #' @examples
 #' dsns <- c('Alias1' = 'dsn1', 'Alias2' = 'dsn2')
 #' set_dsn(dsns)
-#' set_default_dsn(default = 'Alias2')
+#' set_default_dsn('Alias2')
 set_default_dsn <- function(alias = NULL) {
   if(is.null(alias)) {
     stop("You're gonna need to provide a value for your default DSN.")
@@ -97,9 +102,6 @@ set_default_dsn <- function(alias = NULL) {
   }
 
   options(ez.dsn.default = options()$ez.dsn[alias])
-  warning(crayon::green(strwrap('NOTE any changes to your DSN in this
-                                session will not be saved for future sessions.
-                                Modify .Renviron for permanent changes.')))
 }
 
 #' Alter your current DSN List
@@ -149,18 +151,17 @@ alter_dsn <- function(new_value, from_alias = NULL) {
                     DSN in your list"))
   }
 
-  warning(crayon::green(strwrap('NOTE any changes to your DSN in this
-                                session will not be saved for future sessions.
-                                Modify .Renviron for permanent changes.')))
-
 }
 
 #' Manually Save Your DSN List to .Renviron
+#'
 #' Allows you to modify your .Renviron to permanently save your session DSNs.
+#'
 #' @return Opens the .Renviron edit window.
 #' @export
+#' @importFrom magrittr '%>%'
 #'
-#' @examples save_dsn()
+#' @examples \dontrun{save_dsn()}
 save_dsn <- function() {
   dsn_list <- create_dsn_list(options()$ez.dsn) %>%
     dplyr::mutate(string = paste("'", Alias, "' = '", DSN ,"'", sep = ''))

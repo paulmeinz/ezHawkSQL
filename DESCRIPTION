@@ -17,5 +17,8 @@ Imports:
     odbc,
     crayon,
     dplyr,
-    devtools,
-    magrittr
+    magrittr,
+    readr,
+    stringr,
+    usethis,
+    DBI

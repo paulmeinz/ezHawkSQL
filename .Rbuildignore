@@ -3,4 +3,4 @@
 ^LICENSE\.md$
 ^.Renviron$
 ^README\.Rmd$
-
+^sql_test.txt$

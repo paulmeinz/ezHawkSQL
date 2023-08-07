@@ -12,3 +12,13 @@ validate_dsn <- function(dsn) {
          in this package."))
   }
 }
+
+generate_steps <- function(vector) {
+  orig_text <- 'Step'
+  step_names <- c()
+  for (i in 1:length(vector)) {
+    step_name <- paste(orig_text, ' ', i, sep = '')
+    step_names <- c(step_names, step_name)
+  }
+  step_names
+}

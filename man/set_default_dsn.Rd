@@ -2,8 +2,7 @@
 % Please edit documentation in R/dsn_functions.R
 \name{set_default_dsn}
 \alias{set_default_dsn}
-\title{Set Your Default DSN
-Helps you set the default DSN for this session.}
+\title{Set Your Default DSN}
 \usage{
 set_default_dsn(alias = NULL)
 }
@@ -14,11 +13,10 @@ set_default_dsn(alias = NULL)
 Sets your default DSN, a.k.a. the global option ez.dsn.default.
 }
 \description{
-Set Your Default DSN
 Helps you set the default DSN for this session.
 }
 \examples{
 dsns <- c('Alias1' = 'dsn1', 'Alias2' = 'dsn2')
 set_dsn(dsns)
-set_default_dsn(default = 'Alias2')
+set_default_dsn('Alias2')
 }

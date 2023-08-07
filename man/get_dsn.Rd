@@ -2,8 +2,7 @@
 % Please edit documentation in R/dsn_functions.R
 \name{get_dsn}
 \alias{get_dsn}
-\title{Get DSNs and Default DSN
-See a printed list of your DSNs and corresponding Aliases}
+\title{Get DSNs and Default DSN}
 \usage{
 get_dsn()
 }
@@ -11,7 +10,6 @@ get_dsn()
 Returns a printed list of your current set DSNs within in this session.
 }
 \description{
-Get DSNs and Default DSN
 See a printed list of your DSNs and corresponding Aliases
 }
 \examples{

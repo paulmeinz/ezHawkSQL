@@ -2,8 +2,7 @@
 % Please edit documentation in R/dsn_functions.R
 \name{save_dsn}
 \alias{save_dsn}
-\title{Manually Save Your DSN List to .Renviron
-Allows you to modify your .Renviron to permanently save your session DSNs.}
+\title{Manually Save Your DSN List to .Renviron}
 \usage{
 save_dsn()
 }
@@ -11,9 +10,8 @@ save_dsn()
 Opens the .Renviron edit window.
 }
 \description{
-Manually Save Your DSN List to .Renviron
 Allows you to modify your .Renviron to permanently save your session DSNs.
 }
 \examples{
-save_dsn()
+\dontrun{save_dsn()}
 }

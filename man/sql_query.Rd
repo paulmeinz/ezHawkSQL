@@ -4,17 +4,12 @@
 \alias{sql_query}
 \title{Execute a single query}
 \usage{
-sql_query(
-  query,
-  dsn_alias = names(options()$ez.dsn.default),
-  close = TRUE,
-  ...
-)
+sql_query(query, dsn_alias = names(options()$ez.dsn.default), ...)
 }
 \arguments{
 \item{query}{The query from which you would like to get data.}
 
-\item{close}{Close and destroy the connection once the query is complete?}
+\item{dsn_alias}{The alias of the DSN you would like to use.}
 
 \item{...}{Additional arguments passed to odbc::dbGetQuery()}
 
