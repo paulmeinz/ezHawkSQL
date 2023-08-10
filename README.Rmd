@@ -25,7 +25,7 @@ ezHawkSQL is intended to make querying from R in an integrated security environm
 
 You can install the development version of ezHawkSQL from [GitHub](https://github.com/) with:
 
-``` {r}
+``` {r eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("paulmeinz/ezHawkSQL")
 ```

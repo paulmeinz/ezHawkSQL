@@ -22,37 +22,6 @@ You can install the development version of ezHawkSQL from
 ``` r
 # install.packages("devtools")
 devtools::install_github("paulmeinz/ezHawkSQL")
-#> Downloading GitHub repo paulmeinz/ezHawkSQL@HEAD
-#> cpp11 (0.4.5 -> 0.4.6) [CRAN]
-#> xfun  (0.39  -> 0.40 ) [CRAN]
-#> purrr (1.0.1 -> 1.0.2) [CRAN]
-#> gert  (1.9.2 -> 1.9.3) [CRAN]
-#> Installing 4 packages: cpp11, xfun, purrr, gert
-#> Installing packages into 'C:/Users/w1563070/AppData/Local/Temp/RtmpauhXTb/temp_libpath58dc7a1668d6'
-#> (as 'lib' is unspecified)
-#> 
-#>   There are binary versions available but the source versions are later:
-#>       binary source needs_compilation
-#> cpp11  0.4.5  0.4.6             FALSE
-#> purrr  1.0.1  1.0.2              TRUE
-#> 
-#> package 'xfun' successfully unpacked and MD5 sums checked
-#> package 'gert' successfully unpacked and MD5 sums checked
-#> 
-#> The downloaded binary packages are in
-#>  C:\Users\w1563070\AppData\Local\Temp\RtmpELWQnY\downloaded_packages
-#> installing the source packages 'cpp11', 'purrr'
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>          checking for file 'C:\Users\w1563070\AppData\Local\Temp\RtmpELWQnY\remotes47545b2f7fb6\paulmeinz-ezHawkSQL-2b9209b/DESCRIPTION' ...     checking for file 'C:\Users\w1563070\AppData\Local\Temp\RtmpELWQnY\remotes47545b2f7fb6\paulmeinz-ezHawkSQL-2b9209b/DESCRIPTION' ...   ✔  checking for file 'C:\Users\w1563070\AppData\Local\Temp\RtmpELWQnY\remotes47545b2f7fb6\paulmeinz-ezHawkSQL-2b9209b/DESCRIPTION' (669ms)
-#>       ─  preparing 'ezHawkSQL':
-#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#>       ─  checking for LF line-endings in source and make files and shell scripts
-#>       ─  checking for empty or unneeded directories
-#>      Omitted 'LazyData' from DESCRIPTION
-#>       ─  building 'ezHawkSQL_1.0.0.tar.gz'
-#>      
-#> 
-#> Warning: package 'ezHawkSQL' is in use and will not be installed
 ```
 
 ## Setting your DSNs
