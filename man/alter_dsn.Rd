@@ -2,7 +2,7 @@
 % Please edit documentation in R/dsn_functions.R
 \name{alter_dsn}
 \alias{alter_dsn}
-\title{Alter your current DSN List}
+\title{Alter Your Current DSN List}
 \usage{
 alter_dsn(new_value, from_alias = NULL)
 }
@@ -19,7 +19,8 @@ Otherwise new_value will be appended to your current DSNs.}
 Adds/modifies your session DSNs, a.k.a options()$ez.dsn
 }
 \description{
-Alter your current DSN List
+Modifies the DSN list in this session. Note that this function will not
+permanently change your DSN list at session startup. Use save_dsn() for that.
 }
 \examples{
 dsns <- c('Alias1' = 'dsn1', 'Alias2' = 'dsn2')

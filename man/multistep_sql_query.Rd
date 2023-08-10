@@ -2,14 +2,14 @@
 % Please edit documentation in R/sql_functions.R
 \name{multistep_sql_query}
 \alias{multistep_sql_query}
-\title{Execute a multi-step query}
+\title{Execute a multi-Step Query}
 \usage{
 multistep_sql_query(query, dsn_alias = names(options()$ez.dsn.default))
 }
 \arguments{
 \item{query}{A character vector with each query. The queries should be in
-the order you wish them to be executed. Each element in this vector should
-also be given a name.}
+the order you wish them to be executed - with the final query pulling data
+Each element in this vector should also be given a name.}
 
 \item{dsn_alias}{The dsn alias you wish to use. Defaults to your default dsn.}
 }

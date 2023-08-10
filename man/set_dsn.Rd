@@ -2,7 +2,7 @@
 % Please edit documentation in R/dsn_functions.R
 \name{set_dsn}
 \alias{set_dsn}
-\title{Set DSN names for local servers}
+\title{Set DSN Names for Local Servers}
 \usage{
 set_dsn(dsn = NULL, default = 1)
 }
@@ -20,7 +20,8 @@ Sets the ez.dsn user defined option and your default DSN which is
   stored in ez.dsn.default
 }
 \description{
-This function temporarily sets your DSNs for use in sql queries.
+This function temporarily sets your DSNs for use in sql queries. It won't
+permanently modify your DSN list. Use save_dsn() for that.
 }
 \examples{
 dsns <- c('Alias1' = 'dsn1', 'Alias2' = 'dsn2')

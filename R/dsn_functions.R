@@ -1,6 +1,7 @@
-#' Set DSN names for local servers
+#' Set DSN Names for Local Servers
 #'
-#' This function temporarily sets your DSNs for use in sql queries.
+#' This function temporarily sets your DSNs for use in sql queries. It won't
+#' permanently modify your DSN list. Use save_dsn() for that.
 #'
 #' @param dsn A named character vector. The names of this list should correspond
 #'   to an 'Alias' you will reference in code later. The values should be datasource
@@ -35,15 +36,11 @@ set_dsn <- function(dsn = NULL, default = 1) {
   } else {
     options(ez.dsn.default = dsn[default])
   }
-
-  warning(crayon::green(strwrap('NOTE any session DSN settings will not
-                                be saved to your next session. Edit
-                                .Renviron for that.')))
 }
 
 #' Get DSNs and Default DSN
 #'
-#' See a printed list of your DSNs and corresponding Aliases
+#' See a printed list of your DSNs in this session and corresponding aliases.
 #'
 #' @return Returns a printed list of your current set DSNs within in this session.
 #' @export
@@ -59,9 +56,9 @@ get_dsn <- function() {
   print(knitr::kable(dsn_list))
 }
 
-#' Clear DSN list
+#' Clear Your DSN List
 #'
-#' Clears your current DSN List
+#' Clears your current DSN list for this session.
 #'
 #' @return Clears the DSNs out of your current session.
 #' @export
@@ -104,7 +101,10 @@ set_default_dsn <- function(alias = NULL) {
   options(ez.dsn.default = options()$ez.dsn[alias])
 }
 
-#' Alter your current DSN List
+#' Alter Your Current DSN List
+#'
+#' Modifies the DSN list in this session. Note that this function will not
+#' permanently change your DSN list at session startup. Use save_dsn() for that.
 #'
 #' @param new_value The new value your want to add. This should be in the form
 #'   of a named character vector. With the name so your vector representing

@@ -2,7 +2,7 @@
 % Please edit documentation in R/sql_functions.R
 \name{sql_query}
 \alias{sql_query}
-\title{Execute a single query}
+\title{Execute a Single query}
 \usage{
 sql_query(query, dsn_alias = names(options()$ez.dsn.default), ...)
 }
@@ -20,7 +20,7 @@ Presuming your query is written properly. Returns a data frame of data
   (e.g. isn't inserting data into a temp table)
 }
 \description{
-Execute a single query
+Execute a Single query
 }
 \examples{
 \dontrun{sql_query("select foo from bar where beans = 'beans'")}

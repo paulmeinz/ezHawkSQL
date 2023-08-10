@@ -25,7 +25,7 @@ ezHawkSQL is intended to make querying from R in an integrated security environm
 
 You can install the development version of ezHawkSQL from [GitHub](https://github.com/) with:
 
-``` r
+``` {r}
 # install.packages("devtools")
 devtools::install_github("paulmeinz/ezHawkSQL")
 ```
@@ -53,9 +53,30 @@ save_dsn()
 ```
 
 ## Querying made easy
-Now that you've worked out your DSN situation, you can use sql_query() to gather data from your favorite data source. This requires two arguments - a query and an alias. If you do not provide an alias, sql_query will use your default alias. This means you only need to provide a query! How neat.
+Now that you've worked out your DSN situation, you can use the SQL helper functions that I've written to make SQL EZ. The first helper function allows you to read queries - read_query(). This function can either read a single select query or it can read a multi-step query. The multi-step query must begin with the execution of several temp table steps (and/or other steps that do not return a data set) and end with a select statement that pulls the data. Each step should be divided by '---step---' so the function can easily distinguish between SQL steps. In the event of a multi-step query, the function will return a named vector. Each element will be a step in the query (in it's relative order of execution), and each element will be provided a name based on the order of execution (e.g., "Step 1", "Step 2", etc.) 
+
+```{r eval = FALSE}
+my_sql_query_directory <- 'spam_sql.txt'
+query <- read_query(my_sql_query_directory)
+```
+
+Next you can use sql_query() to gather data from your favorite data source. This requires two arguments - a query and an alias. If you do not provide an alias, sql_query will use your default alias. This means you only need to provide a query! How neat.
 
 ```{r eval = FALSE}
 sql_query("select spam from beautiful_spam where spam = 'yum'", 'spam')
+
+# OR
+my_sql_query_directory <- 'spam_sql.txt'
+query <- read_query(my_sql_query_directory)
+sql_query(query)
+```
+
+sql_query() query will however not work super well for a multi-step query - e.g. a query that has several preparatory steps prior to pulling the final data set. For that, you can use multistep_sql_query(). This function takes as it's first argument a named list of queries in the order of execution (e.g. first element gets executed first, etc.). The second argument is your DSN alias.
+
+```{r eval = FALSE}
+step1 <- "select spam into #spam_table from beautiful_spam"
+step2 <- "select * from #spam_table"
+queries <- c('Step 1' = step1, 'Step 2' = step2)
+multistep_sql_query(queries)
 ```
 

@@ -10,7 +10,7 @@ get_dsn()
 Returns a printed list of your current set DSNs within in this session.
 }
 \description{
-See a printed list of your DSNs and corresponding Aliases
+See a printed list of your DSNs in this session and corresponding aliases.
 }
 \examples{
 get_dsn()

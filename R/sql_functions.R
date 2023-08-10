@@ -1,4 +1,4 @@
-#' Execute a single query
+#' Execute a Single query
 #'
 #' @param dsn The alias of your dsn. Uses default dsn if not specified.
 #' @param dsn_alias The alias of the DSN you would like to use.
@@ -30,7 +30,7 @@ sql_query <- function(query, dsn_alias = names(options()$ez.dsn.default),
   data
 }
 
-#' Read a SQL query from a text file
+#' Read a SQL Query From a Text File
 #'
 #' This is function allows the user to read a query from a text file. No validation
 #' of that file is conducted. In other words, this function could read any text file.
@@ -52,15 +52,15 @@ read_query <- function(file) {
   query
 }
 
-#' Execute a multi-step query
+#' Execute a multi-Step Query
 #'
 #' If you have a multi-step query that requires the creation of a couple temp
 #' tables, you can use this function to execute each in order and then pull
 #' data from the final query.
 #'
 #' @param query A character vector with each query. The queries should be in
-#'   the order you wish them to be executed. Each element in this vector should
-#'   also be given a name.
+#'   the order you wish them to be executed - with the final query pulling data
+#'   Each element in this vector should also be given a name.
 #' @param dsn_alias The dsn alias you wish to use. Defaults to your default dsn.
 #'
 #' @return A dataset

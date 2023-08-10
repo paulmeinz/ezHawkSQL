@@ -2,7 +2,7 @@
 % Please edit documentation in R/sql_functions.R
 \name{read_query}
 \alias{read_query}
-\title{Read a SQL query from a text file}
+\title{Read a SQL Query From a Text File}
 \usage{
 read_query(file)
 }
