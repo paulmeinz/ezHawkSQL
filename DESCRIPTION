@@ -1,7 +1,7 @@
 Package: ezHawkSQL
 Type: Package
 Title: Make SQL Querying With Integrated Security EZ
-Version: 1.0.1
+Version: 1.0.2
 Author: person("Paul", "Meinz", "meinzp@crc.losrios.edu", role = c("aut", "cre"))
 Maintainer: <meinzp@crc.losrios.edu>
 URL: https://github.com/paulmeinz/ezHawkSQL
